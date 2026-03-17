@@ -1,68 +1,294 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benim İlk Sitem</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ömer Canatar</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #1e3c72, #2a5298, #6dd5ed);
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        .kutu {
-            width: 90%;
-            max-width: 600px;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-        }
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1d4ed8, #38bdf8);
+      color: #1f2937;
+      min-height: 100vh;
+    }
 
-        h1 {
-            margin-top: 0;
-            font-size: 42px;
-            color: #1f2937;
-        }
+    .hero {
+      min-height: 100vh;
+      padding: 30px 20px 60px;
+      display: flex;
+      flex-direction: column;
+    }
 
-        p {
-            font-size: 22px;
-            color: #4b5563;
-            margin-bottom: 30px;
-        }
+    .navbar {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
 
-        button {
-            background-color: #2563eb;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            padding: 14px 28px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
 
-        button:hover {
-            background-color: #1d4ed8;
-            transform: scale(1.05);
-        }
-    </style>
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.8;
+    }
+
+    .hero-content {
+      background: rgba(255, 255, 255, 0.95);
+      max-width: 750px;
+      margin: auto;
+      padding: 50px 35px;
+      border-radius: 24px;
+      text-align: center;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .tag {
+      font-size: 18px;
+      color: #2563eb;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .hero-content h1 {
+      font-size: 52px;
+      margin-bottom: 20px;
+      color: #111827;
+    }
+
+    .subtitle {
+      font-size: 20px;
+      line-height: 1.6;
+      color: #4b5563;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn.primary {
+      background: #2563eb;
+      color: white;
+    }
+
+    .btn.primary:hover {
+      background: #1d4ed8;
+    }
+
+    .btn.secondary {
+      background: #e5e7eb;
+      color: #111827;
+    }
+
+    .btn.secondary:hover {
+      background: #d1d5db;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 35px;
+      border-radius: 24px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .section h2 {
+      font-size: 32px;
+      margin-bottom: 18px;
+      color: #111827;
+    }
+
+    .section p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: #374151;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-card h3 {
+      margin-bottom: 12px;
+      color: #111827;
+    }
+
+    .project-card p {
+      font-size: 16px;
+      color: #4b5563;
+    }
+
+    .contact-links {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .contact-links a {
+      text-decoration: none;
+      color: white;
+      background: #2563eb;
+      padding: 12px 18px;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+
+    .contact-links a:hover {
+      background: #1d4ed8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px 35px;
+      color: white;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .nav-links a {
+        margin: 0 10px;
+      }
+
+      .hero-content h1 {
+        font-size: 38px;
+      }
+
+      .subtitle {
+        font-size: 18px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="kutu">
-        <h1>Merhaba Gençlerrrr</h1>
-        <p>Bu benim ilk internet sitem.</p>
-        <button>Tıkla</button>
+  <header class="hero">
+    <nav class="navbar">
+      <div class="logo">Ömer Canatar</div>
+      <div class="nav-links">
+        <a href="#hakkimda">Hakkımda</a>
+        <a href="#projeler">Projeler</a>
+        <a href="#iletisim">İletişim</a>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <p class="tag">Merhaba, Ben</p>
+      <h1>Ömer Canatar</h1>
+      <p class="subtitle">
+        İlk kişisel web siteme hoş geldin. Burada kendim, yaptıklarım ve
+        projelerim hakkında kısa bilgiler paylaşacağım.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projeler" class="btn primary">Projelerim</a>
+        <a href="#iletisim" class="btn secondary">Bana Ulaş</a>
+      </div>
     </div>
+  </header>
+
+  <main>
+    <section id="hakkimda" class="section card">
+      <h2>Hakkımda</h2>
+      <p>
+        Merhaba, ben Ömer. Teknoloji, iş geliştirme ve satış tarafında çalışan,
+        yeni şeyler öğrenmeyi seven biriyim. Bu siteyi hem kendimi geliştirmek
+        hem de internette kendi alanımı oluşturmak için hazırladım.
+      </p>
+    </section>
+
+    <section id="projeler" class="section">
+      <h2>Projeler</h2>
+      <div class="projects">
+        <div class="project-card">
+          <h3>İlk Web Sitem</h3>
+          <p>HTML ve CSS kullanarak hazırladığım ilk kişisel internet sitesi.</p>
+        </div>
+
+        <div class="project-card">
+          <h3>Yeni Proje Alanı</h3>
+          <p>Buraya ileride kendi projelerini, işlerini veya çalışmalarını ekleyebilirsin.</p>
+        </div>
+
+        <div class="project-card">
+          <h3>Geliştirme Süreci</h3>
+          <p>Bu site zamanla gelişecek. Tasarım, içerik ve yeni bölümler eklenecek.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="iletisim" class="section card">
+      <h2>İletişim</h2>
+      <p>Bana ulaşmak için aşağıdaki bağlantıları kullanabilirsin.</p>
+
+      <div class="contact-links">
+        <a href="mailto:ornekmail@example.com">E-Posta</a>
+        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        <a href="https://github.com/omercanatar" target="_blank">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Ömer Canatar - Tüm Hakları Saklıdır.</p>
+  </footer>
 </body>
 </html>
